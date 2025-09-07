@@ -36,4 +36,4 @@ jobs:
 
     #step7: Build
       - name: Build
-        run: npm run Build
+        run: npm run build
