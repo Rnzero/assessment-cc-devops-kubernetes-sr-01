@@ -25,13 +25,19 @@ jobs:
       - name: check node version
         run: node -v
 
-    #initialize node
-      - name: Initialize node
+    #initialize npm
+      - name: Initialize npm
         run: npm init -y
+
+    #install prereq
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential python3 make g++    
         
     #step3: install any dependencies
       - name: Install dependencies
-        run: npm install eslint prettier jest
+        run: npm install #eslint prettier jest
 
     #step4: run ESlint
       - name: Run Lint
