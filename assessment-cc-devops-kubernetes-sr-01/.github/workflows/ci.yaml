@@ -24,12 +24,16 @@ jobs:
 
     #step4: run ESlint
       - name: Run Lint
-        run: npm lint
+        run: npm run lint
 
     #step5: run prettier --write
       - name: Run Prettier
-        run:
+        run: npm run prettier
 
     #step6: run Jest
       - name: Run Jest
-        run: 
+        run: npm run test
+
+    #step7: Build
+      - name: Build
+        run: npm run Build
