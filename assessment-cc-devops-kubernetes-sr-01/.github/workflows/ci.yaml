@@ -1,1 +1,35 @@
-name CICD Pipeline
+name: CI Pipeline
+
+on:
+  pull_request:
+    types: [opened, reopened, edited]
+
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    #step1: checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+    #step2: setup node
+      - name: Setup node
+        uses: actions/setup-node@v5
+        
+    #step3: install any dependencies
+      - name: Install dependencies
+        run: npm install
+
+    #step4: run ESlint
+      - name: Run Lint
+        run: npm lint
+
+    #step5: run prettier --write
+      - name: Run Prettier
+        run:
+
+    #step6: run Jest
+      - name: Run Jest
+        run: 
